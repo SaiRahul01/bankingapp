@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import LoginScreen from './src/screens/signinscreens/Login'
+import RegisterScreen from './src/screens/Registerscreens/Register'
 
 
 
@@ -19,7 +20,7 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.root}  >
-     <LoginScreen/>
+     <RegisterScreen/>
     </SafeAreaView>
   );
 };
