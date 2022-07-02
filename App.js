@@ -34,7 +34,7 @@ const App = () => {
             <Stack.Screen name="RegisterScreen" component={RegisterScreen}></Stack.Screen>
             <Stack.Screen name="ConfirmRegister" component={ConfirmRegister}></Stack.Screen>
             <Stack.Screen name="ForgotPassword" component={ForgotPassword}></Stack.Screen>
-            <Stack.Screen name="New Password" component={NewPassword}></Stack.Screen>
+            <Stack.Screen name="NewPassword" component={NewPassword}></Stack.Screen>
 
         </Stack.Navigator>
     </NavigationContainer>

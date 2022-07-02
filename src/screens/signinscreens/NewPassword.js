@@ -4,8 +4,10 @@ import Loginlogo from '../../../assets/images/login-img.png'
 import CustomInput from '../../components/inputs/LoginInput'
 import Btn from '../../components/buttons/Loginbtn'
 import { useState } from 'react'
+import {useNavigation} from '@react-navigation/native' 
 
 const NewPassword = () => {
+    const navigationtool=useNavigation();
     const {height}=useWindowDimensions()
     
     const [code, setcode] = useState('')
@@ -15,7 +17,7 @@ const NewPassword = () => {
         console.warn("Sent  code!");
     }
     const handlebacktologin=()=>{
-        console.warn("Go back to Login");
+        navigationtool.navigate("LoginScreen")
     }
     const handlechangepassword=()=>{ 
         console.warn("Password Changed!");

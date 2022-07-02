@@ -13,7 +13,7 @@ const ForgotPassword = () => {
     const [username, setusername] = useState('')
 
     const handleonsend=()=>{
-        console.warn("Sent  code!");
+        navigationtool.navigate("NewPassword")
     }
     const handlebacktologin=()=>{
         navigationtool.navigate("LoginScreen")
