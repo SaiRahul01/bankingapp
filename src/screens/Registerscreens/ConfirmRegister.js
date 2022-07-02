@@ -4,8 +4,11 @@ import Loginlogo from '../../../assets/images/login-img.png'
 import CustomInput from '../../components/inputs/LoginInput'
 import Btn from '../../components/buttons/Loginbtn'
 import { useState } from 'react'
+import {useNavigation} from '@react-navigation/native' 
 
 const ConfirmRegister = () => {
+    const navigationtool=useNavigation();
+
     const {height}=useWindowDimensions()
     
     const [code, setcode] = useState('')
@@ -14,10 +17,10 @@ const ConfirmRegister = () => {
         console.warn("Please send a new code!");
     }
     const handlebacktologin=()=>{
-        console.warn("Go back to Login");
+       navigationtool.navigate("LoginScreen")
     }
     const handleonconfirm=()=>{
-        console.warn("Email Confirmed!");
+        navigationtool.navigate("HomeScreen")
     }
   return (
     <ScrollView showsVerticalScrollIndicator={false}>

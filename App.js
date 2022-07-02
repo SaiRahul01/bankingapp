@@ -16,6 +16,7 @@ import NewPassword from './src/screens/signinscreens/NewPassword';
 // import Navigation from './src/navigation/index'
 import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './src/screens/HomeScreens/Home';
 
 
 
@@ -27,8 +28,9 @@ const App = () => {
   return (
   
         <NavigationContainer>
-        <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Navigator initialRouteName="LoginScreen" screenOptions={{headerShown:false}}>
             <Stack.Screen name="LoginScreen" component={LoginScreen}></Stack.Screen>
+            <Stack.Screen name="HomeScreen" component={Home}></Stack.Screen>
             <Stack.Screen name="RegisterScreen" component={RegisterScreen}></Stack.Screen>
             <Stack.Screen name="ConfirmRegister" component={ConfirmRegister}></Stack.Screen>
             <Stack.Screen name="ForgotPassword" component={ForgotPassword}></Stack.Screen>

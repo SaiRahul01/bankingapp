@@ -4,8 +4,10 @@ import Loginlogo from '../../../assets/images/login-img.png'
 import CustomInput from '../../components/inputs/LoginInput'
 import Btn from '../../components/buttons/Loginbtn'
 import { useState } from 'react'
+import {useNavigation} from '@react-navigation/native' 
 
 const ForgotPassword = () => {
+    const navigationtool=useNavigation();
     const {height}=useWindowDimensions()
     
     const [username, setusername] = useState('')
@@ -14,11 +16,9 @@ const ForgotPassword = () => {
         console.warn("Sent  code!");
     }
     const handlebacktologin=()=>{
-        console.warn("Go back to Login");
+        navigationtool.navigate("LoginScreen")
     }
-    const handleonconfirm=()=>{
-        console.warn("Email Confirmed!");
-    }
+   
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.root}>

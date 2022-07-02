@@ -4,8 +4,10 @@ import Loginlogo from '../../../assets/images/login-img.png'
 import CustomInput from '../../components/inputs/LoginInput'
 import Btn from '../../components/buttons/Loginbtn'
 import { useState } from 'react'
+import {useNavigation} from '@react-navigation/native' 
 
 const Register = () => {
+    const navigationtool=useNavigation();
     const {height}=useWindowDimensions()
     const [username, setusername] = useState('')
     const [useremail, setuseremail] = useState('')
@@ -13,16 +15,11 @@ const Register = () => {
     const [userpasswordrep, setUserpasswordrep] = useState('')
 
     const handleregister=()=>{
-        console.warn("Registered Successfully");
+        navigationtool.navigate("ConfirmRegister")
     }
-    const handleforgotpassword=()=>{
-        console.warn("Bc, ");
-    }
-    const handlegooglelogin=()=>{
-        console.warn("Logged in with Google!!");
-    }
+    
     const handlehaveaccount=()=>{
-        console.warn("Login Now");
+        navigationtool.navigate("LoginScreen")
     }
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
