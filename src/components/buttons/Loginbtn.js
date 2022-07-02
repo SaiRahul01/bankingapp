@@ -26,7 +26,8 @@ const styles=StyleSheet.create({
         
     },
     root_second:{
-        backgroundColor:'red'
+        borderColor:'#3B71F3',
+        borderWidth:1
     },
     logintxt:{
         color:'white',
@@ -38,6 +39,9 @@ const styles=StyleSheet.create({
     },
     logintxt_primary:{
         color:'white'
+    },
+    logintxt_second:{
+        color:'#3B71F3'
     }
 
 })
