@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet,useWindowDimensions ,ScrollView} from 'react-native'
+import { View, Text, Image, StyleSheet,useWindowDimensions ,ScrollView, ToastAndroid} from 'react-native'
 import React from 'react'
 import Loginlogo from '../../../assets/images/login-img.png'
 import CustomInput from '../../components/inputs/LoginInput'
@@ -14,19 +14,46 @@ const Register = () => {
     const [useremail, setuseremail] = useState('')
     const [userpassword, setUserpassword] = useState('')
     const [userpasswordrep, setUserpasswordrep] = useState('')
+   
 
     const createuser=async(a,b)=>{
         try{
             let resp=await auth().createUserWithEmailAndPassword(a,b);
             if(resp){
-                console.warn("User Created");
+                ToastAndroid.show("Registered Successfully!",1000);
+                navigationtool.navigate("LoginScreen")
             }
         }
         catch(e){
+            ToastAndroid.show("Something went wrong",1000);
             console.log(e);
         }
     }
     const handleregister=()=>{
+        if(username===''){
+            ToastAndroid.show("Username can't be empty",1000);
+            return;
+        }
+        if(useremail===''){
+            ToastAndroid.show("Email can't be empty",1000);
+            return;
+        }
+        if(userpassword===''){
+            ToastAndroid.show("Password can't be empty",1000);
+            return
+        }
+        if(!(useremail.includes("@gmail.com"))){
+            ToastAndroid.show("Enter a valid Gmail",1000);
+            return;
+        }
+        if(userpassword!==userpasswordrep){
+            ToastAndroid.show("Passwords do not match",1000);
+            return;
+        }
+        if(userpassword!=='' && userpassword.length<6){
+            ToastAndroid.show("Password must be atlease 6 characters long");
+            return;
+        }
       
         createuser(useremail,userpassword);
         // navigationtool.navigate("LoginScreen")

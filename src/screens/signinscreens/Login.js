@@ -16,6 +16,18 @@ const Login = () => {
     const handlelogin=()=>{
         // console.warn("Holy Shit");
         // navigationtool.navigate("HomeScreen")
+        if(username===''){
+            ToastAndroid.show("Email can't be empty",1000);
+            return;
+        }
+        if(userpassword===''){
+            ToastAndroid.show("Password can't be empty",1000);
+            return
+        }
+        if(!(username.includes("@gmail.com"))){
+            ToastAndroid.show("Enter a valid Gmail",1000);
+            return;
+        }
         loginuser(username,userpassword);
 
     }
@@ -30,6 +42,7 @@ const Login = () => {
         }
         catch(e){
             console.log(e);
+            ToastAndroid.show("Invalid Credentials",2000);
         }
     }
 
@@ -47,7 +60,7 @@ const Login = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.root}>
-     
+        {/* <Text>User:{auth().currentUser.email}</Text> */}
      <Image source={Loginlogo} style={[styles.a,{height:height*0.3,marginBottom:40}]} resizeMode="contain"/>
      <CustomInput placeholder="User Name" value={username} setValue={setusername} ste={false}/>
      <CustomInput placeholder="Password" value={userpassword} setValue={setUserpassword} ste={true}/>
