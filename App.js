@@ -19,6 +19,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/screens/HomeScreens/Home';
 // import { AuthContext } from './src/AuthProvider';
 import auth from '@react-native-firebase/auth'
+import Tabs from './src/navigation/tabnavigation/Tabs';
 // import Drawer from './src/screens/HomeScreens/Drawer';
 
 
@@ -36,7 +37,7 @@ const App = () => {
         <NavigationContainer>
         <Stack.Navigator  screenOptions={{headerShown:false}}>
             <Stack.Screen name="LoginScreen" component={LoginScreen}></Stack.Screen>
-            <Stack.Screen name="HomeScreen" component={Home}></Stack.Screen>
+            <Stack.Screen name="HomeScreen" component={Tabs}></Stack.Screen>
             <Stack.Screen name="RegisterScreen" component={RegisterScreen}></Stack.Screen>
             <Stack.Screen name="ConfirmRegister" component={ConfirmRegister}></Stack.Screen>
             <Stack.Screen name="ForgotPassword" component={ForgotPassword}></Stack.Screen>

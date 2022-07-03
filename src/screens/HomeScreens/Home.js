@@ -5,6 +5,8 @@ import Btn from '../../components/buttons/Loginbtn'
 import {useNavigation} from '@react-navigation/native'
 import Monkey from '../../../assets/images/monkey.png'
 import { createDrawerNavigator } from '@react-navigation/drawer'
+import Tabs from '../../navigation/tabnavigation/Tabs'
+import {NavigationContainer} from '@react-navigation/native'
 
 const Home = () => {
   const navigationtool=useNavigation();
@@ -19,19 +21,23 @@ const Home = () => {
     })
   }
   return (
-    <View style={styles.root}>
+    // <View style={styles.root}>
 
-    <Text style={styles.welcometxt}>Welcome to Banking Monkey </Text>
-    <Image source={Monkey} style={styles.monkeyimg} resizeMode="contain"/>
+    // <Text style={styles.welcometxt}>Welcome to Banking Monkey </Text>
+    // <Image source={Monkey} style={styles.monkeyimg} resizeMode="contain"/>
 
-      {
-        firebase.auth().currentUser?<Text style={styles.title}>Hello there, Welcome {firebase.auth().currentUser.email}</Text>:<Text style={{textAlign:'center',fontSize:20}}>Logged out</Text>
-      }
-      <View style={{width:'50%',marginLeft:'auto',marginRight:'auto',marginTop:100}}>
-      <Btn btntext="Logout" onpress={handleLogout} style={{width:50}} type="primary"/>
-      </View>
+    //   {
+    //     firebase.auth().currentUser?<Text style={styles.title}>Hello there, Welcome {firebase.auth().currentUser.email}</Text>:<Text style={{textAlign:'center',fontSize:20}}>Logged out</Text>
+    //   }
+    //   <View style={{width:'50%',marginLeft:'auto',marginRight:'auto',marginTop:100}}>
+    //   <Btn btntext="Logout" onpress={handleLogout} style={{width:50}} type="primary"/>
+    //   </View>
       
-    </View>
+    // </View>
+    <NavigationContainer>
+      <Tabs/>
+    </NavigationContainer>
+    
   )
 }
 const styles=StyleSheet.create({
