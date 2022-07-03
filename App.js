@@ -19,6 +19,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/screens/HomeScreens/Home';
 // import { AuthContext } from './src/AuthProvider';
 import auth from '@react-native-firebase/auth'
+// import Drawer from './src/screens/HomeScreens/Drawer';
 
 
 
