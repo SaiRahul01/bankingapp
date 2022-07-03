@@ -1,10 +1,11 @@
-import { View, Text, Image, StyleSheet,useWindowDimensions ,ScrollView} from 'react-native'
+import { View, Text, Image, StyleSheet,useWindowDimensions ,ScrollView, Alert, ToastAndroid} from 'react-native'
 import React from 'react'
 import Loginlogo from '../../../assets/images/login-img.png'
 import CustomInput from '../../components/inputs/LoginInput'
 import Btn from '../../components/buttons/Loginbtn'
 import { useState } from 'react'
 import {useNavigation} from '@react-navigation/native' 
+import auth from '@react-native-firebase/auth'
 
 const Login = () => {
     const navigationtool=useNavigation();
@@ -14,8 +15,24 @@ const Login = () => {
     const [userpassword, setUserpassword] = useState('')
     const handlelogin=()=>{
         // console.warn("Holy Shit");
-        navigationtool.navigate("HomeScreen")
+        // navigationtool.navigate("HomeScreen")
+        loginuser(username,userpassword);
+
     }
+    const loginuser=async(a,b)=>{
+        try{
+            let resp=await auth().signInWithEmailAndPassword(a,b);
+            if(resp && resp.user){
+                console.log("Logged in successfully");
+                ToastAndroid.show("Logged in",1000);
+                navigationtool.navigate("HomeScreen")
+            }
+        }
+        catch(e){
+            console.log(e);
+        }
+    }
+
     const handleforgotpassword=()=>{
         // console.warn("Bc, ");
         navigationtool.navigate("ForgotPassword")

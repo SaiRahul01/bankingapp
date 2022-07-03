@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -17,13 +17,18 @@ import NewPassword from './src/screens/signinscreens/NewPassword';
 import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/screens/HomeScreens/Home';
+// import { AuthContext } from './src/AuthProvider';
+import auth from '@react-native-firebase/auth'
 
 
 
 const App = () => {
+
+  // const {user, setuser} = useContext(AuthContext)
+  // const [initializing, setInitializing] = useState(true);
  
   const Stack=createNativeStackNavigator()
- 
+
 
   return (
   

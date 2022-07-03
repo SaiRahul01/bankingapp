@@ -5,6 +5,7 @@ import CustomInput from '../../components/inputs/LoginInput'
 import Btn from '../../components/buttons/Loginbtn'
 import { useState } from 'react'
 import {useNavigation} from '@react-navigation/native' 
+import auth from '@react-native-firebase/auth'
 
 const Register = () => {
     const navigationtool=useNavigation();
@@ -14,8 +15,24 @@ const Register = () => {
     const [userpassword, setUserpassword] = useState('')
     const [userpasswordrep, setUserpasswordrep] = useState('')
 
+    const createuser=async(a,b)=>{
+        try{
+            let resp=await auth().createUserWithEmailAndPassword(a,b);
+            if(resp){
+                console.warn("User Created");
+            }
+        }
+        catch(e){
+            console.log(e);
+        }
+    }
     const handleregister=()=>{
-        navigationtool.navigate("ConfirmRegister")
+      
+        createuser(useremail,userpassword);
+        // navigationtool.navigate("LoginScreen")
+        
+
+
     }
     
     const handlehaveaccount=()=>{
