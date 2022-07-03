@@ -6,11 +6,12 @@ import Btn from '../../components/buttons/Loginbtn'
 import {useNavigation} from '@react-navigation/native'
 
 const A = () => {
+  const navigationtool=useNavigation();
     const handleLogout=()=>{
-      const navigationtool=useNavigation();
+      
         auth().signOut().then(()=>{
           ToastAndroid.show("Logged out",1000)
-          navigationtool.navigate("LoginScreen")
+          // navigationtool.navigate("LoginScreen")
     
         })
       }
@@ -23,7 +24,9 @@ const A = () => {
       {
         firebase.auth().currentUser?<Text style={styles.title}>Hello there, Welcome {firebase.auth().currentUser.email}</Text>:<Text style={{textAlign:'center',fontSize:20}}>Logged out</Text>
       }
-      
+      {/* <View style={{width:'50%',marginLeft:'auto',marginRight:'auto',marginTop:'0%'}}>
+      <Btn btntext="Logout" onpress={handleLogout} style={{width:50}} type="primary"/>
+      </View> */}
       
     </View>
   )

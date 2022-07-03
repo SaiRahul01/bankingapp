@@ -7,9 +7,25 @@ import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MCI from 'react-native-vector-icons/MaterialCommunityIcons'
 import MI from 'react-native-vector-icons/MaterialIcons'
+import {useNavigation} from '@react-navigation/native'
+import { useEffect } from 'react';
+import auth,{firebase} from '@react-native-firebase/auth'
 
 const Tab=createBottomTabNavigator()
  const Tabs=()=>{
+    const navigationtool=useNavigation();
+
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged(function(user){
+            if(user){
+    
+            }else{
+                navigationtool.navigate("LoginScreen")
+            }
+        })
+    }, [])
+    
+    
     return(
        
         <Tab.Navigator screenOptions={{
