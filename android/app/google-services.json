@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1049905194768",
-    "project_id": "banking-app-c4861",
-    "storage_bucket": "banking-app-c4861.appspot.com"
+    "project_number": "523012207467",
+    "project_id": "bankingapp-eab42",
+    "storage_bucket": "bankingapp-eab42.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1049905194768:android:4883fdd12dff659d3a2795",
+        "mobilesdk_app_id": "1:523012207467:android:f39062fbe750537437d22e",
         "android_client_info": {
           "package_name": "com.bankingapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1049905194768-6oe21ohssrvf7qepehct2f1f22nr55qt.apps.googleusercontent.com",
+          "client_id": "523012207467-abk50h1lqg7d4mo3ss5o2amnimcvf07l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCxL35JSoMVEKxF-lrQjXZ2ZgbMH8vboLA"
+          "current_key": "AIzaSyB_PXaXg0N3bFTdt1iGo_iYCt4xdqqvudA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1049905194768-6oe21ohssrvf7qepehct2f1f22nr55qt.apps.googleusercontent.com",
+              "client_id": "523012207467-abk50h1lqg7d4mo3ss5o2amnimcvf07l.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
