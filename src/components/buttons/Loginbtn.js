@@ -21,6 +21,10 @@ const styles=StyleSheet.create({
         backgroundColor:'#3B71F3',
       
     },
+    root_danger:{
+        backgroundColor:'crimson'
+    }
+    ,
     root_ter:{
         backgroundColor:'white',
         

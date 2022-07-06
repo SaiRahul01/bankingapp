@@ -27,7 +27,7 @@ const Register = (props) => {
         //     ToastAndroid.show("Something went wrong",1000);
         //     console.log(e);
         // }
-        navigationtool.navigate("OtpScreen")
+        navigationtool.navigate("otpverificationscreen")
         // Axios.post("http://40.80.91.121:5001/api/Verifylogin",{
             
         //     phone:props.usermobilenumber,

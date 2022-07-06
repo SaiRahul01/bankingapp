@@ -4,9 +4,17 @@ import Monkey from '../../../assets/images/monkey.png'
 import auth,{firebase} from '@react-native-firebase/auth'
 import Btn from '../../components/buttons/Loginbtn'
 import {useNavigation} from '@react-navigation/native'
+import { Table, Row, Rows } from 'react-native-table-component';
 
 const A = () => {
   const navigationtool=useNavigation();
+
+
+
+
+ 
+
+
     const handleLogout=()=>{
       
         auth().signOut().then(()=>{
@@ -19,14 +27,9 @@ const A = () => {
     <View style={styles.root}>
 
     <Text style={styles.welcometxt}>Welcome to Banking App </Text>
-    <Image source={Monkey} style={styles.monkeyimg} resizeMode="contain"/>
-
-      {
-        firebase.auth().currentUser?<Text style={styles.title}>Hello there, Welcome {firebase.auth().currentUser.email}</Text>:<Text style={{textAlign:'center',fontSize:20}}>Logged out</Text>
-      }
-      {/* <View style={{width:'50%',marginLeft:'auto',marginRight:'auto',marginTop:'0%'}}>
-      <Btn btntext="Logout" onpress={handleLogout} style={{width:50}} type="primary"/>
-      </View> */}
+    {/* <Image source={Monkey} style={styles.monkeyimg} resizeMode="contain"/> */}
+    
+     
       
     </View>
   )
@@ -56,7 +59,10 @@ const styles=StyleSheet.create({
       marginLeft:'auto',
       marginRight:'auto',
       marginBottom:80
-    }
+    },
+    container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
+  head: { height: 40, backgroundColor: '#f1f8ff' },
+  text: { margin: 6 }
 })
 
 export default A

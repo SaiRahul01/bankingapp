@@ -16,19 +16,20 @@ const Otpverification = (props) => {
     const handlelogin=()=>{
         // console.warn("Holy Shit");
         // navigationtool.navigate("HomeScreen")
-        if(username===''){
-            ToastAndroid.show("Email can't be empty",1000);
-            return;
-        }
-        if(userpassword===''){
-            ToastAndroid.show("Password can't be empty",1000);
-            return
-        }
-        if(!(username.includes("@gmail.com"))){
-            ToastAndroid.show("Enter a valid Gmail",1000);
-            return;
-        }
-        loginuser(username,userpassword);
+        // if(username===''){
+        //     ToastAndroid.show("Email can't be empty",1000);
+        //     return;
+        // }
+        // if(userpassword===''){
+        //     ToastAndroid.show("Password can't be empty",1000);
+        //     return
+        // }
+        // if(!(username.includes("@gmail.com"))){
+        //     ToastAndroid.show("Enter a valid Gmail",1000);
+        //     return;
+        // }
+        // loginuser(username,userpassword);
+        navigationtool.navigate("HomeScreen")
 
     }
     const loginuser=async(a,b)=>{

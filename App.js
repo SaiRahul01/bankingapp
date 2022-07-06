@@ -1,5 +1,6 @@
-import React, { useContext ,useState} from 'react';
+import React, { useContext ,useState,useEffect} from 'react';
 import {
+  ActivityIndicator,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -8,22 +9,11 @@ import {
 
   View,
 } from 'react-native';
-import LoginScreen from './src/screens/signinscreens/Login'
-import RegisterScreen from './src/screens/Registerscreens/Register'
-import ConfirmRegister from './src/screens/Registerscreens/ConfirmRegister'
-import ForgotPassword from './src/screens/signinscreens/ForgotPassword';
-import NewPassword from './src/screens/signinscreens/NewPassword';
-// import Navigation from './src/navigation/index'
 import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './src/screens/HomeScreens/Home';
-// import { AuthContext } from './src/AuthProvider';
-import auth from '@react-native-firebase/auth'
 import Tabs from './src/navigation/tabnavigation/Tabs';
-import Drawer from './src/navigation/drawernavigation/Drawer';
-import Animated from 'react-native-reanimated';
-import Otpverification from './src/screens/Registerscreens/Otpverification';
-// import Drawer from './src/screens/HomeScreens/Drawer';
+import AuthStack from './src/navigation/stacknavigation/AuthStack';
+
 
 
 
@@ -33,30 +23,35 @@ const App = () => {
   // const [initializing, setInitializing] = useState(true);
   const [usermobilenumber, setusermobilenumber] = useState('')
   const [custid, setcustid] = useState('')
+  const [isloggedin, setisloggedin] = useState(false)
+  const [isloading, setisloading] = useState(true)
+  useEffect(() => {
+    setTimeout(() => {
+       setisloading(false)
+    }, 2000);
+  }, [])
+  
  
   const Stack=createNativeStackNavigator()
+  if(isloading){
+    return (
+      <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+        <ActivityIndicator  size={'large'}/>
+      </View>
+    )
+  }
+
 
 
   return (
-  
-        <NavigationContainer>
-        <Stack.Navigator  screenOptions={{headerShown:false}}>
-            <Stack.Screen name="LoginScreen"  >
-              {()=><LoginScreen usermobilenumber={usermobilenumber} custid={custid} setcustid={setcustid} setusermobilenumber={setusermobilenumber}/>}
-            </Stack.Screen>
-            <Stack.Screen name="HomeScreen" component={Tabs}></Stack.Screen>
-            <Stack.Screen name="RegisterScreen" >
-              {()=><RegisterScreen usermobilenumber={usermobilenumber} custid={custid} setcustid={setcustid} setusermobilenumber={setusermobilenumber} />}
-            </Stack.Screen>
-            <Stack.Screen name="OtpScreen" >
-              {()=><Otpverification usermobilenumber={usermobilenumber} custid={custid} setcustid={setcustid} setusermobilenumber={setusermobilenumber} />}
-            </Stack.Screen>
-            <Stack.Screen name="ConfirmRegister" component={ConfirmRegister}></Stack.Screen>
-            <Stack.Screen name="ForgotPassword" component={ForgotPassword}></Stack.Screen>
-            <Stack.Screen name="NewPassword" component={NewPassword}></Stack.Screen>
 
-        </Stack.Navigator>
-    </NavigationContainer>
+        <NavigationContainer>
+            {isloggedin?<Tabs isloggedin={isloggedin} setisloggedin={setisloggedin}/> 
+            :<AuthStack isloggedin={isloggedin} setisloggedin={setisloggedin}/>}
+        </NavigationContainer>
+
+  
+   
    
   );
 };

@@ -13,40 +13,43 @@ const Login = (props) => {
     const {height}=useWindowDimensions()
 
     const handlelogin=()=>{
-        // console.warn("Holy Shit");
-        // navigationtool.navigate("HomeScreen")
+    
        
-        // loginuser(username,userpassword);
+   
+        ToastAndroid.show("Logged in",1000);
+       setTimeout(() => {
+        props.setisloggedin(true);
+       }, 500);
 
     }
     const loginuser=async(a,b)=>{
-        try{
-            let resp=await auth().signInWithEmailAndPassword(a,b);
-            if(resp && resp.user){
-                console.log("Logged in successfully");
-                ToastAndroid.show("Logged in",1000);
-                navigationtool.navigate("HomeScreen")
-            }
-        }
-        catch(e){
-            console.log(e);
-            ToastAndroid.show("Invalid Credentials",2000);
-        }
+        // try{
+        //     let resp=await auth().signInWithEmailAndPassword(a,b);
+        //     if(resp && resp.user){
+        //         console.log("Logged in successfully");
+        //         ToastAndroid.show("Logged in",1000);
+        //         navigationtool.navigate("HomeScreen")
+        //     }
+        // }
+        // catch(e){
+        //     console.log(e);
+        //     ToastAndroid.show("Invalid Credentials",2000);
+        // }
     }
 
     const handleforgotpassword=()=>{
-        // console.warn("Bc, ");
+
         navigationtool.navigate("ForgotPassword")
     }
     
     const handledonthaveanaccount=()=>{
-        // console.warn("Register Now");
+   
         navigationtool.navigate("RegisterScreen")
     }
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.root}>
-        {/* <Text>User:{auth().currentUser.email}</Text> */}
+
      <Image source={Loginlogo} style={[styles.a,{height:height*0.3,marginBottom:40}]} resizeMode="contain"/>
     
      <CustomInput placeholder="Customer ID" value={props.custid} setValue={props.setcustid} ste={false}/>
@@ -54,8 +57,7 @@ const Login = (props) => {
      <Btn btntext="Login" onpress={handlelogin} type="primary"/>
      <Btn btntext="Forgot Password" onpress={handleforgotpassword} type="ter"/>
 
-     {/* <Btn btntext="Login  with Google" onpress={handlegooglelogin} type="second"/> */}
-     {/* <Btn btntext="Login with FaceBook" onpress={handleforgotpassword} type="primary"/> */}
+ 
      <Btn btntext="Don't have an account? Register" onpress={handledonthaveanaccount} type="ter"/>
    </View>
     </ScrollView>
