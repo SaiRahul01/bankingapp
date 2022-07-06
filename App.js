@@ -13,6 +13,7 @@ import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Tabs from './src/navigation/tabnavigation/Tabs';
 import AuthStack from './src/navigation/stacknavigation/AuthStack';
+import Drawerbox from './src/navigation/drawernavigation/Drawer.js'
 
 
 
@@ -46,8 +47,17 @@ const App = () => {
   return (
 
         <NavigationContainer>
-            {isloggedin?<Tabs isloggedin={isloggedin} setisloggedin={setisloggedin}/> 
-            :<AuthStack isloggedin={isloggedin} setisloggedin={setisloggedin}/>}
+            {
+                isloggedin?
+                  <Drawerbox isloggedin={isloggedin} setisloggedin={setisloggedin}/> 
+                :<AuthStack isloggedin={isloggedin} setisloggedin={setisloggedin}/>
+             
+            }
+          
+
+          
+
+
         </NavigationContainer>
 
   
