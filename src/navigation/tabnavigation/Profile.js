@@ -5,6 +5,7 @@ import auth,{firebase} from '@react-native-firebase/auth'
 import Btn from '../../components/buttons/Loginbtn'
 import {useNavigation} from '@react-navigation/native'
 import MI from 'react-native-vector-icons/MaterialIcons'
+import profileicon from '../../../assets/images/profile.png'
 
 
 const Logout = (props) => {
@@ -30,11 +31,12 @@ const Logout = (props) => {
     }
   return (
     <View style={styles.root}>
-      <Text style={styles.profile}>Profile</Text>
+      <Text style={styles.profile}> PROFILE</Text>
+      <Image source={profileicon} style={{height:120,width:120,marginLeft:'auto',marginRight:'auto',marginTop:30}} resizeMode="contain"/>
     
   
     
-      <View style={{width:'80%',marginLeft:'10%',marginTop:'125%'}}>
+      <View style={{width:'80%',marginLeft:'10%'}}>
       
        
       <Btn btntext="Logout" onpress={handleLogout} style={{width:50}} type="danger"/>
@@ -73,7 +75,7 @@ const styles=StyleSheet.create({
       fontSize:40,
       textAlign:'center',
       color:'#076cfa',
-      fontFamily:'sans-serif-light'
+   
     }
 })
 

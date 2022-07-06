@@ -53,7 +53,7 @@ const Login = (props) => {
      <Image source={Loginlogo} style={[styles.a,{height:height*0.3,marginBottom:40}]} resizeMode="contain"/>
     
      <CustomInput placeholder="Customer ID" value={props.custid} setValue={props.setcustid} ste={false}/>
-     <CustomInput placeholder="Mobile Number" value={props.usermobilenumber} setValue={props.setusermobilenumber} ste={true}/>
+     <CustomInput placeholder="Mobile Number" value={props.usermobilenumber} setValue={props.setusermobilenumber} type='numeric' ste={true}/>
      <Btn btntext="Login" onpress={handlelogin} type="primary"/>
      <Btn btntext="Forgot Password" onpress={handleforgotpassword} type="ter"/>
 

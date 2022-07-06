@@ -32,10 +32,11 @@ const Tab=createBottomTabNavigator()
         <Tab.Navigator screenOptions={ {
             
             headerShown:false,
-            tabBarActiveTintColor:'blue',
+            tabBarActiveTintColor:'crimson',
             tabBarInactiveTintColor:'black',
-            tabBarStyle:{height:60,backgroundColor:'#0d6efd'},
-            tabBarLabelStyle:{fontSize:12,marginBottom:10,color:'white'}
+            tabBarStyle:{height:60},
+            tabBarLabelStyle:{fontSize:12,marginBottom:10},
+            tabBarShowLabel:false
             
             
             
@@ -43,15 +44,15 @@ const Tab=createBottomTabNavigator()
             
             
         }} >
-        <Tab.Screen name="Home"    options={{tabBarIcon:({focused})=>(<Ionicons name='home-outline' color={focused?'white':'black'} size={25} />) }}>
+        <Tab.Screen name="Home"    options={{tabBarIcon:({focused})=>(<Ionicons name='home-outline' color={focused?'crimson':'black'} size={25} />) }}>
             {()=><A/>}
         </Tab.Screen>
 
-        <Tab.Screen name="BankTransfers" options={{tabBarIcon:({focused})=>(<MCI name='bank-transfer' color={focused?'white':'black'}  size={40} />)}} >
+        <Tab.Screen name="BankTransfers" options={{tabBarIcon:({focused})=>(<MCI name='bank-transfer-out' color={focused?'crimson':'black'}  size={40} />)}} >
             {()=><B />}
         </Tab.Screen>
 
-        <Tab.Screen name="Profile" options={{tabBarIcon:({focused})=>(<FI name='user' color={focused?'white':'black'}  size={25}  />)}}>
+        <Tab.Screen name="Profile" options={{tabBarIcon:({focused})=>(<FI name='user' color={focused?'crimson':'black'}  size={25}  />)}}>
             {()=><C isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} />}
         </Tab.Screen>
 

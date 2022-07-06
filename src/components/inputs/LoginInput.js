@@ -1,11 +1,12 @@
 import { View, Text, TextInput,StyleSheet } from 'react-native'
 import React from 'react'
 
-const LoginInput = ({value,setValue,placeholder,ste}) => {
+const LoginInput = ({value,setValue,placeholder,ste,type}) => {
   return (
     <View style={p.root}>
       
       <TextInput 
+      keyboardType={type}
       placeholder={placeholder}
       style={p.inputstyle}
       value={value}
