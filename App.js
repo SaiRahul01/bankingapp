@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext ,useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -20,6 +20,9 @@ import Home from './src/screens/HomeScreens/Home';
 // import { AuthContext } from './src/AuthProvider';
 import auth from '@react-native-firebase/auth'
 import Tabs from './src/navigation/tabnavigation/Tabs';
+import Drawer from './src/navigation/drawernavigation/Drawer';
+import Animated from 'react-native-reanimated';
+import Otpverification from './src/screens/Registerscreens/Otpverification';
 // import Drawer from './src/screens/HomeScreens/Drawer';
 
 
@@ -28,6 +31,8 @@ const App = () => {
 
   // const {user, setuser} = useContext(AuthContext)
   // const [initializing, setInitializing] = useState(true);
+  const [usermobilenumber, setusermobilenumber] = useState('')
+  const [custid, setcustid] = useState('')
  
   const Stack=createNativeStackNavigator()
 
@@ -36,9 +41,16 @@ const App = () => {
   
         <NavigationContainer>
         <Stack.Navigator  screenOptions={{headerShown:false}}>
-            <Stack.Screen name="LoginScreen" component={LoginScreen}></Stack.Screen>
+            <Stack.Screen name="LoginScreen"  >
+              {()=><LoginScreen usermobilenumber={usermobilenumber} custid={custid} setcustid={setcustid} setusermobilenumber={setusermobilenumber}/>}
+            </Stack.Screen>
             <Stack.Screen name="HomeScreen" component={Tabs}></Stack.Screen>
-            <Stack.Screen name="RegisterScreen" component={RegisterScreen}></Stack.Screen>
+            <Stack.Screen name="RegisterScreen" >
+              {()=><RegisterScreen usermobilenumber={usermobilenumber} custid={custid} setcustid={setcustid} setusermobilenumber={setusermobilenumber} />}
+            </Stack.Screen>
+            <Stack.Screen name="OtpScreen" >
+              {()=><Otpverification usermobilenumber={usermobilenumber} custid={custid} setcustid={setcustid} setusermobilenumber={setusermobilenumber} />}
+            </Stack.Screen>
             <Stack.Screen name="ConfirmRegister" component={ConfirmRegister}></Stack.Screen>
             <Stack.Screen name="ForgotPassword" component={ForgotPassword}></Stack.Screen>
             <Stack.Screen name="NewPassword" component={NewPassword}></Stack.Screen>

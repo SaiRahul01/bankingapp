@@ -18,7 +18,7 @@ const A = () => {
   return (
     <View style={styles.root}>
 
-    <Text style={styles.welcometxt}>Welcome to Banking Monkey </Text>
+    <Text style={styles.welcometxt}>Welcome to Banking App </Text>
     <Image source={Monkey} style={styles.monkeyimg} resizeMode="contain"/>
 
       {
