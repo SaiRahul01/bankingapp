@@ -26,7 +26,7 @@ const A = () => {
   return (
     <View style={styles.root}>
 
-    <Text style={styles.welcometxt}>Welcome to Banking App </Text>
+    <Text style={styles.welcometxt}>My Bank Account</Text>
     {/* <Image source={Monkey} style={styles.monkeyimg} resizeMode="contain"/> */}
     
      

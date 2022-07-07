@@ -31,16 +31,16 @@ const Logout = (props) => {
     }
   return (
     <View style={styles.root}>
-      <Text style={styles.profile}> PROFILE</Text>
+      
       <Image source={profileicon} style={{height:120,width:120,marginLeft:'auto',marginRight:'auto',marginTop:30}} resizeMode="contain"/>
-    
+      <Text style={{textAlign:'center',marginTop:50,fontSize:30,fontFamily:'Slabo27px-Regular'}}>My Profile</Text>
   
     
-      <View style={{width:'80%',marginLeft:'10%'}}>
+      {/* <View style={{width:'80%',marginLeft:'10%',marginTop:300}}>
       
        
       <Btn btntext="Logout" onpress={handleLogout} style={{width:50}} type="danger"/>
-      </View>
+      </View> */}
       
     </View>
   )

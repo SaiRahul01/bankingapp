@@ -1,28 +1,49 @@
 import 'react-native-gesture-handler';
-import { View, Text } from 'react-native'
+import { View, Text, Button, Pressable,ToastAndroid } from 'react-native'
 import React from 'react'
 import { createDrawerNavigator, DrawerItem, DrawerItemList } from '@react-navigation/drawer'
 import A from './Home'
 import B from './BankTransfers'
 import C from './Profile'
+import D from './Edeposits'
+import E from './Settings'
 import II from 'react-native-vector-icons/Ionicons'
 import MCI from 'react-native-vector-icons/MaterialCommunityIcons'
+import MI from 'react-native-vector-icons/MaterialIcons'
 import F from 'react-native-vector-icons/Feather'
-import CustomDrawer from './CustomDrawer';
+import DrawerContent from './DrawerContent.js';
 // drawerContent={props=><CustomDrawer {...props} />}
 const Drawer = (props) => {
+  const handleLogout=()=>{
+       
+    setTimeout(() => {
+      props.setisloggedin(false)
+    }, 500);
+    ToastAndroid.show("Logged out!",1000);
+
+
+}
+
   const Drawerr = createDrawerNavigator()
   return (
-    <Drawerr.Navigator  screenOptions={{ drawerLabelStyle: {}, drawerActiveBackgroundColor: 'black', drawerActiveTintColor: 'white' }}>
+    <Drawerr.Navigator drawerContent={(props)=><DrawerContent {...props}/>}
+     screenOptions={{ drawerLabelStyle: {}, drawerActiveBackgroundColor: 'black', drawerActiveTintColor: 'white',headerTintColor:'black',headerTitleAlign:'center',headerShown:true,headerTitleStyle:{fontFamily:'',fontSize:24},headerRight:()=>(<Pressable onPress={handleLogout}><MI name='logout' size={30} style={{marginRight:10}}/></Pressable>) }}>
 
-      <Drawerr.Screen name='Home' component={A} options={{ drawerIcon: ({ focused, size }) => (<II name='home' color={focused ? 'white' : 'black'} size={20} />) }} />
+      <Drawerr.Screen name='My Account' component={A} />
 
-      <Drawerr.Screen name='Bank Transfers' component={B} options={{ drawerIcon: ({ focused, size }) => (<MCI name='bank-transfer-out' color={focused ? 'white' : 'black'} size={30} />) }} />
+      <Drawerr.Screen name='Bank Transfers' component={B}  />
 
-      <Drawerr.Screen name='Profile' options={{ drawerIcon: ({ focused, size }) => (<F name='user' color={focused ? 'white' : 'black'} size={20} />) }}>
+      <Drawerr.Screen name='Profile' >
         {() => <C isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} />}
       </Drawerr.Screen>
+
+      <Drawerr.Screen name='E-Deposits' >
+        {() => <D  />}
+      </Drawerr.Screen>
       
+      <Drawerr.Screen name='Settings'>
+        {() => <E isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} />}
+      </Drawerr.Screen>
       
 
     </Drawerr.Navigator>

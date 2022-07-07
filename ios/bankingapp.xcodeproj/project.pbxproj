@@ -14,6 +14,22 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-bankingapp-bankingappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-bankingapp-bankingappTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		965A9C92B4F24F0D94CBA6C5 /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E0C474A5D4B45189E08CEE0 /* DancingScript-Bold.ttf */; };
+		2E4AABF43995441DA64D7C9C /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAB930ED69DA4A9A820C1ADE /* DancingScript-Medium.ttf */; };
+		123D24691BA442B48E2A4A7A /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B54F14450C774F80BB751989 /* DancingScript-Regular.ttf */; };
+		DFCF2BAFDBC1408D87CF0B9E /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00DC835CBDF64533A75CBE31 /* DancingScript-SemiBold.ttf */; };
+		0061E3ED97D848A0929306C6 /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 319829D7B5CB4A0CB13CD482 /* DancingScript-VariableFont_wght.ttf */; };
+		97354E46631C433FB4F9E42A /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 16FC63A3697642ECB6586CC8 /* DancingScript-Bold.ttf */; };
+		92184E2754B44533BC8991C7 /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC0AD5CD0B23495DBF501F97 /* DancingScript-Medium.ttf */; };
+		DA64F6029A954C6887553FB2 /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BD5E94748EF4091AE9674CF /* DancingScript-Regular.ttf */; };
+		6A04352F465841729796B713 /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F131521EA6F94F7DABD193F5 /* DancingScript-SemiBold.ttf */; };
+		F1A8953316774649B5D7487C /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB912D4DADB44A69A1960DCC /* DancingScript-VariableFont_wght.ttf */; };
+		E5BAD2CCAFC24C0396D4CD4B /* KantumruyPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA477A852F8A4882AA576362 /* KantumruyPro-Regular.ttf */; };
+		60CD11A4F73647588A6CDA6D /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7D5A0616C0E426ABF920D56 /* Comfortaa-Bold.ttf */; };
+		45B514A4D1FB4855AC2A5F7B /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2833E73FCF04A2EAB1FF7BB /* Comfortaa-Regular.ttf */; };
+		6752319489FC48189376BC88 /* Slabo27px-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94807C7DE1CC41838BCCFE55 /* Slabo27px-Regular.ttf */; };
+		A9129390667D40BC8B0BA357 /* Signika-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6369A2F6AFD54283AAFBB205 /* Signika-Bold.ttf */; };
+		D8B87E72D5FC49EB87E49202 /* Signika-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E45B892F00694DBA93FA3BA5 /* Signika-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +60,22 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = bankingapp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-bankingapp-bankingappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bankingapp-bankingappTests.release.xcconfig"; path = "Target Support Files/Pods-bankingapp-bankingappTests/Pods-bankingapp-bankingappTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		8E0C474A5D4B45189E08CEE0 /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; name = "DancingScript-Bold.ttf"; path = "../assets/fonts/Dancing_Script/DancingScript-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CAB930ED69DA4A9A820C1ADE /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; name = "DancingScript-Medium.ttf"; path = "../assets/fonts/Dancing_Script/DancingScript-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B54F14450C774F80BB751989 /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; name = "DancingScript-Regular.ttf"; path = "../assets/fonts/Dancing_Script/DancingScript-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		00DC835CBDF64533A75CBE31 /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; name = "DancingScript-SemiBold.ttf"; path = "../assets/fonts/Dancing_Script/DancingScript-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		319829D7B5CB4A0CB13CD482 /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "DancingScript-VariableFont_wght.ttf"; path = "../assets/fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		16FC63A3697642ECB6586CC8 /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; name = "DancingScript-Bold.ttf"; path = "../assets/fonts/DancingScript-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BC0AD5CD0B23495DBF501F97 /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; name = "DancingScript-Medium.ttf"; path = "../assets/fonts/DancingScript-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9BD5E94748EF4091AE9674CF /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; name = "DancingScript-Regular.ttf"; path = "../assets/fonts/DancingScript-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F131521EA6F94F7DABD193F5 /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; name = "DancingScript-SemiBold.ttf"; path = "../assets/fonts/DancingScript-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CB912D4DADB44A69A1960DCC /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "DancingScript-VariableFont_wght.ttf"; path = "../assets/fonts/DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FA477A852F8A4882AA576362 /* KantumruyPro-Regular.ttf */ = {isa = PBXFileReference; name = "KantumruyPro-Regular.ttf"; path = "../assets/fonts/KantumruyPro-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F7D5A0616C0E426ABF920D56 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; name = "Comfortaa-Bold.ttf"; path = "../assets/fonts/Comfortaa-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A2833E73FCF04A2EAB1FF7BB /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; name = "Comfortaa-Regular.ttf"; path = "../assets/fonts/Comfortaa-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		94807C7DE1CC41838BCCFE55 /* Slabo27px-Regular.ttf */ = {isa = PBXFileReference; name = "Slabo27px-Regular.ttf"; path = "../assets/fonts/Slabo27px-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6369A2F6AFD54283AAFBB205 /* Signika-Bold.ttf */ = {isa = PBXFileReference; name = "Signika-Bold.ttf"; path = "../assets/fonts/Signika-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E45B892F00694DBA93FA3BA5 /* Signika-Regular.ttf */ = {isa = PBXFileReference; name = "Signika-Regular.ttf"; path = "../assets/fonts/Signika-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +154,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				B8D9DEA2E3D4497F81361490 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +180,30 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		B8D9DEA2E3D4497F81361490 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				8E0C474A5D4B45189E08CEE0 /* DancingScript-Bold.ttf */,
+				CAB930ED69DA4A9A820C1ADE /* DancingScript-Medium.ttf */,
+				B54F14450C774F80BB751989 /* DancingScript-Regular.ttf */,
+				00DC835CBDF64533A75CBE31 /* DancingScript-SemiBold.ttf */,
+				319829D7B5CB4A0CB13CD482 /* DancingScript-VariableFont_wght.ttf */,
+				16FC63A3697642ECB6586CC8 /* DancingScript-Bold.ttf */,
+				BC0AD5CD0B23495DBF501F97 /* DancingScript-Medium.ttf */,
+				9BD5E94748EF4091AE9674CF /* DancingScript-Regular.ttf */,
+				F131521EA6F94F7DABD193F5 /* DancingScript-SemiBold.ttf */,
+				CB912D4DADB44A69A1960DCC /* DancingScript-VariableFont_wght.ttf */,
+				FA477A852F8A4882AA576362 /* KantumruyPro-Regular.ttf */,
+				F7D5A0616C0E426ABF920D56 /* Comfortaa-Bold.ttf */,
+				A2833E73FCF04A2EAB1FF7BB /* Comfortaa-Regular.ttf */,
+				94807C7DE1CC41838BCCFE55 /* Slabo27px-Regular.ttf */,
+				6369A2F6AFD54283AAFBB205 /* Signika-Bold.ttf */,
+				E45B892F00694DBA93FA3BA5 /* Signika-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +301,22 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				965A9C92B4F24F0D94CBA6C5 /* DancingScript-Bold.ttf in Resources */,
+				2E4AABF43995441DA64D7C9C /* DancingScript-Medium.ttf in Resources */,
+				123D24691BA442B48E2A4A7A /* DancingScript-Regular.ttf in Resources */,
+				DFCF2BAFDBC1408D87CF0B9E /* DancingScript-SemiBold.ttf in Resources */,
+				0061E3ED97D848A0929306C6 /* DancingScript-VariableFont_wght.ttf in Resources */,
+				97354E46631C433FB4F9E42A /* DancingScript-Bold.ttf in Resources */,
+				92184E2754B44533BC8991C7 /* DancingScript-Medium.ttf in Resources */,
+				DA64F6029A954C6887553FB2 /* DancingScript-Regular.ttf in Resources */,
+				6A04352F465841729796B713 /* DancingScript-SemiBold.ttf in Resources */,
+				F1A8953316774649B5D7487C /* DancingScript-VariableFont_wght.ttf in Resources */,
+				E5BAD2CCAFC24C0396D4CD4B /* KantumruyPro-Regular.ttf in Resources */,
+				60CD11A4F73647588A6CDA6D /* Comfortaa-Bold.ttf in Resources */,
+				45B514A4D1FB4855AC2A5F7B /* Comfortaa-Regular.ttf in Resources */,
+				6752319489FC48189376BC88 /* Slabo27px-Regular.ttf in Resources */,
+				A9129390667D40BC8B0BA357 /* Signika-Bold.ttf in Resources */,
+				D8B87E72D5FC49EB87E49202 /* Signika-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
