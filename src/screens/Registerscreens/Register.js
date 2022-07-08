@@ -12,61 +12,59 @@ const Register = (props) => {
     const navigationtool=useNavigation();
     const {height}=useWindowDimensions()
     const [refId, setrefId] = useState('')
+    
   
    
 
     const createuser=async(a,b)=>{
-        // try{
-        //     let resp=await auth().createUserWithEmailAndPassword(a,b);
-        //     if(resp){
-        //         ToastAndroid.show("Registered Successfully!",1000);
-        //         navigationtool.navigate("LoginScreen")
-        //     }
-        // }
-        // catch(e){
-        //     ToastAndroid.show("Something went wrong",1000);
-        //     console.log(e);
-        // }
-        navigationtool.navigate("otpverificationscreen")
-        // Axios.post("http://40.80.91.121:5001/api/Verifylogin",{
+        
+        // console.log(props.mobilenumber+" "+props.custid);
+        Axios.post("http://40.80.91.121:5001/api/Verifylogin",{
+           
+            phone:props.mobilenumber,
+            custId:props.custid
+        }).then((resp)=>{
             
-        //     phone:props.usermobilenumber,
-        //     custId:props.custid
+            let p=JSON.parse(resp.request._response)
+            let q=resp.data
+            console.log(q);
+            // if(resp.data.RefId){
+            //     setrefId(resp.data.RefId)
+            // }
+            // else{
+            //     ToastAndroid.show("Something Went Wrong")
+            //     return;
+            // }
+            // ToastAndroid.show(resp.payload.RefId)
+        })
+        // Axios.post("",{
+        //     phone:props.mobilenumber,
+        //     custId:props.custid,
+        //     refId:refId
+
         // }).then((resp)=>{
-            
-            
-        //     console.log( (resp.data));
-        //     // ToastAndroid.show(resp.payload.RefId)
+        //     console.log("Second api response\n");
+        //     console.log(resp);
         // })
+
+
+        // fetch("http://40.80.91.121:5001/api/Verifylogin",{
+        //     method:'post',
+        //     body:{
+        //         phone:props.usermobilenumber,
+        //         custId:props.custid
+        //     }
+        // }).then(json=>console.log(json))
+
+
+
+
 
     }
     const handleregister=()=>{
-        // if(username===''){
-        //     ToastAndroid.show("Username can't be empty",1000);
-        //     return;
-        // }
-        // if(usermobilenumber===''){
-        //     ToastAndroid.show("Email can't be empty",1000);
-        //     return;
-        // }
-        // if(userpassword===''){
-        //     ToastAndroid.show("Password can't be empty",1000);
-        //     return
-        // }
-        // if(!(usermobilenumber.includes("@gmail.com"))){
-        //     ToastAndroid.show("Enter a valid Gmail",1000);
-        //     return;
-        // }
-        // if(userpassword!==userpasswordrep){
-        //     ToastAndroid.show("Passwords do not match",1000);
-        //     return;
-        // }
-        // if(userpassword!=='' && userpassword.length<6){
-        //     ToastAndroid.show("Password must be atlease 6 characters long");
-        //     return;
-        // }
       
-        createuser(props.usermobilenumber,props.custid);
+      
+        createuser(props.mobilenumber,props.custid);
         // navigationtool.navigate("LoginScreen")
         
 
@@ -86,7 +84,7 @@ const Register = (props) => {
      {/* <CustomInput placeholder="Password" value={userpassword} setValue={setUserpassword} ste={true}/>
      <CustomInput placeholder="Confirm Password" value={userpasswordrep} setValue={setUserpasswordrep} ste={true}/> */}
      <CustomInput placeholder="Customer id" value={props.custid} setValue={props.setcustid} ste={false}/>
-     <CustomInput placeholder="Mobile Number" value={props.usermobilenumber} setValue={props.setusermobilenumber} ste={false}/>
+     <CustomInput placeholder="Mobile Number" value={props.mobilenumber} setValue={props.setmobilenumber} ste={false}/>
 
      <Text style={styles.pp}>By Registering, you confirm that you accept our <Text style={{color:'red'}}>Terms of Use</Text> and <Text style={{color:'red'}}>Privacy Policy</Text></Text>
      <Btn btntext="Create" onpress={handleregister} type="primary"/>
