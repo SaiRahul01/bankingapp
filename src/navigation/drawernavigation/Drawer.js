@@ -7,6 +7,7 @@ import B from './BankTransfers'
 import C from './Profile'
 import D from './Edeposits'
 import E from './Settings'
+import G from './BankStatement'
 import II from 'react-native-vector-icons/Ionicons'
 import MCI from 'react-native-vector-icons/MaterialCommunityIcons'
 import MI from 'react-native-vector-icons/MaterialIcons'
@@ -29,7 +30,7 @@ const Drawer = (props) => {
   const Drawerr = createDrawerNavigator()
   return (
     <Drawerr.Navigator drawerContent={(props)=><DrawerContent {...props}/>}
-     screenOptions={{ drawerLabelStyle: {}, drawerActiveBackgroundColor: 'black', drawerActiveTintColor: 'white',headerTintColor:'black',headerTitleAlign:'center',headerShown:true,headerTitleStyle:{fontFamily:'',fontSize:24},headerRight:()=>(<Pressable onPress={handleLogout}><MI name='logout' size={30} style={{marginRight:10}}/></Pressable>) }}>
+     screenOptions={{ drawerLabelStyle: {}, drawerActiveBackgroundColor: 'black', drawerActiveTintColor: 'white',headerTintColor:'black',headerTitleAlign:'center',headerShown:true,headerTitleStyle:{fontFamily:'',fontSize:24},headerRight:()=>(<Pressable onPress={handleLogout}><MI name='logout' size={30} style={{marginRight:10,color:'red'}}/></Pressable>) }}>
 
       <Drawerr.Screen name='My Account' >
         {()=><A {...props}/>}
@@ -45,6 +46,10 @@ const Drawer = (props) => {
 
       <Drawerr.Screen name='E-Deposits' >
         {() => <D {...props} />}
+      </Drawerr.Screen>
+
+      <Drawerr.Screen name='Bank Statement'>
+        {() => <G {...props} isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} />}
       </Drawerr.Screen>
       
       <Drawerr.Screen name='Settings'>

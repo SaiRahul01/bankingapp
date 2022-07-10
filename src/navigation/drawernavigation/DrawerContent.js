@@ -8,6 +8,7 @@ import MI from 'react-native-vector-icons/MaterialIcons'
 import MCI from 'react-native-vector-icons/MaterialCommunityIcons'
 import FA from 'react-native-vector-icons/FontAwesome'
 import II from 'react-native-vector-icons/Ionicons'
+import ET from 'react-native-vector-icons/Entypo'
 
 const DrawerContent = (props) => {
     const handlelogout=()=>{
@@ -37,6 +38,7 @@ const DrawerContent = (props) => {
 
                 <DrawerItem label="E Deposits" icon={()=><FA name='rupee' size={25} style={{marginLeft:5}} />} style={{}} onPress={()=>props.navigation.navigate("E-Deposits")}/>
 
+                <DrawerItem label="Bank Statement" icon={()=><ET name='newsletter' size={25} style={{marginLeft:2,marginRight:-8}}/>} style={{}} onPress={()=>props.navigation.navigate("Bank Statement")}/>
 
                 <DrawerItem label="Bank Transfers" icon={()=><MCI name='bank-transfer' size={35} style={{marginRight:-18}}/>} style={{}} onPress={()=>props.navigation.navigate("Bank Transfers")}/>
 

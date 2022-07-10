@@ -14,21 +14,44 @@ const Login = (props) => {
     const [password, setpassword] = useState('')
 
     const handlelogin=()=>{
-        if(props.custid===''){
-            Alert.alert("Invalid Credentials!","Please Enter valid Customer ID");
-            return;
+        let a = "http://40.80.91.121:5001/api/Memberlogin";
+        const dd = {
+          
+            "userName": props.custid,
+            "password": password
         }
-        if(password!=='123456'){
-            Alert.alert("Invalid Credentials!","Please Check the Customer Id and Password ");
-            return;
-        }
-        
-       
-   
-        ToastAndroid.show("Logged in",1000);
-       setTimeout(() => {
-        props.setisloggedin(true);
-       }, 500);
+        fetch(a, {
+            method: 'POST',
+            headers: {
+                
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dd),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // console.log("Data\n");
+                // console.log(data);
+                // console.log("\n");
+                if (data.result === 'Success'){
+                   ToastAndroid.show("Logged in",1000);
+                   props.setisloggedin(true)
+                 
+                }
+                else{
+                    console.log(data);
+                    Alert.alert("Login Failed!","Please check the credentials");
+                }
+                
+               
+                
+               
+                
+
+            })
+            .catch((error) => {
+
+            });
 
     }
    
