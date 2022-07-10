@@ -16,7 +16,7 @@ const RegisterStack = (props) => {
             {()=><Register mobilenumber={mobilenumber} setmobilenumber={setmobilenumber} custid={custid} setcustid={setcustid} />}
         </regstack.Screen>
         <regstack.Screen name='otpverificationscreen'>
-            {()=><Otpverification/>}
+            {()=><Otpverification mobilenumber={mobilenumber} setmobilenumber={setmobilenumber} custid={custid} setcustid={setcustid}/>}
         </regstack.Screen>
     </regstack.Navigator>
   )

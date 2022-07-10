@@ -1,122 +1,147 @@
-import { View, Text, Image, StyleSheet,useWindowDimensions ,ScrollView, ToastAndroid} from 'react-native'
+import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView, ToastAndroid, Alert } from 'react-native'
 import React from 'react'
 import Loginlogo from '../../../assets/images/login-img.png'
 import CustomInput from '../../components/inputs/LoginInput'
 import Btn from '../../components/buttons/Loginbtn'
 import { useState } from 'react'
-import {useNavigation} from '@react-navigation/native' 
+import { useNavigation } from '@react-navigation/native'
 import auth from '@react-native-firebase/auth'
 import Axios from 'axios'
 
 const Register = (props) => {
-    const navigationtool=useNavigation();
-    const {height}=useWindowDimensions()
+    const navigationtool = useNavigation();
+    const { height } = useWindowDimensions()
     const [refId, setrefId] = useState('')
-    
-  
-   
+    const [payload, setpayload] = React.useState('');
 
-    const createuser=async(a,b)=>{
-        
-        // console.log(props.mobilenumber+" "+props.custid);
-        Axios.post("http://40.80.91.121:5001/api/Verifylogin",{
-           
-            phone:props.mobilenumber,
-            custId:props.custid
-        }).then((resp)=>{
-            
-            let p=JSON.parse(resp.request._response)
-            let q=resp.data
-            console.log(q);
-            // if(resp.data.RefId){
-            //     setrefId(resp.data.RefId)
-            // }
-            // else{
-            //     ToastAndroid.show("Something Went Wrong")
-            //     return;
-            // }
-            // ToastAndroid.show(resp.payload.RefId)
+
+
+
+    const createuser = async (a, b) => {
+        let loginUrl = "http://40.80.91.121:5001/api/Verifylogin";
+        const data = {
+            "name": "010001742",
+            "phone": props.mobilenumber,
+            "custId": props.custid
+        }
+        fetch(loginUrl, {
+            method: 'POST',
+            headers: {
+                
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
         })
-        // Axios.post("",{
-        //     phone:props.mobilenumber,
-        //     custId:props.custid,
-        //     refId:refId
+            .then((response) => response.json())
+            .then((data) => {
+                // console.log("Data\n");
+                // console.log(data);
+                // console.log("\n");
+                if (data.result === 'Success'){
+                    var pp = data.payload;
+                    setpayload(pp[0]);
+                    console.log("Refid->"+payload.RefId);
+                    // ToastAndroid.show("1st Api good",1000);
+                }
+                
+               if(data.message==='Already Customer has Registered'){
+                Alert.alert("Error","User Already Registered");
+               
+               }
+                
+               
+                
 
-        // }).then((resp)=>{
-        //     console.log("Second api response\n");
-        //     console.log(resp);
-        // })
+            })
+            .catch((error) => {
+
+            });
 
 
-        // fetch("http://40.80.91.121:5001/api/Verifylogin",{
-        //     method:'post',
-        //     body:{
-        //         phone:props.usermobilenumber,
-        //         custId:props.custid
-        //     }
-        // }).then(json=>console.log(json))
+            // Second api call
+
+        let loginUrl1 = "http://40.80.91.121:5001/api/Confirmverification ";
+        const data1 = {
+           
+            "phone": a,
+            "custId":b,
+            "refId":payload.RefId
+        }
+        fetch(loginUrl1, {
+            method: 'POST',
+            headers: {
+                //   'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data1),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("See below for Second Api\n");
+                console.log(data);
+                // ToastAndroid.show("Second Api good",1000);
+                navigationtool.navigate("otpverificationscreen")
+                // console.log(data.result);
+             
+               
+
+
+            })
+            .catch((error) => {
+
+            });
+
+
+
 
 
 
 
 
     }
-    const handleregister=()=>{
-      
-      
-        createuser(props.mobilenumber,props.custid);
-        // navigationtool.navigate("LoginScreen")
-        
-
-
+    const handleregister = () => {
+        createuser(props.mobilenumber, props.custid);
     }
-    
-    const handlehaveaccount=()=>{
+
+    const handlehaveaccount = () => {
         navigationtool.navigate("LoginScreen")
     }
-  return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.root}>
-        <Text style={styles.title}>Create an Account</Text>
-     {/* <Image source={Loginlogo} style={[styles.a,{height:height*0.3,marginBottom:40}]} resizeMode="contain"/> */}
-     {/* <CustomInput placeholder="User Name" value={username} setValue={setusername} ste={false}/> */}
-     
-     {/* <CustomInput placeholder="Password" value={userpassword} setValue={setUserpassword} ste={true}/>
-     <CustomInput placeholder="Confirm Password" value={userpasswordrep} setValue={setUserpasswordrep} ste={true}/> */}
-     <CustomInput placeholder="Customer id" value={props.custid} setValue={props.setcustid} ste={false}/>
-     <CustomInput placeholder="Mobile Number" value={props.mobilenumber} setValue={props.setmobilenumber} ste={false}/>
+    return (
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.root}>
+                <Text style={styles.title}>Create an Account</Text>
 
-     <Text style={styles.pp}>By Registering, you confirm that you accept our <Text style={{color:'red'}}>Terms of Use</Text> and <Text style={{color:'red'}}>Privacy Policy</Text></Text>
-     <Btn btntext="Create" onpress={handleregister} type="primary"/>
-     {/* <Btn btntext="Forgot Password" onpress={handleforgotpassword} type="ter"/> */}
+                <CustomInput placeholder="Customer id" value={props.custid} setValue={props.setcustid} ste={false} />
+                <CustomInput placeholder="Mobile Number" value={props.mobilenumber} setValue={props.setmobilenumber} ste={false} />
 
-     {/* <Btn btntext="Login  with Google" onpress={handlegooglelogin} type="second"/> */}
-     {/* <Btn btntext="Login with FaceBook" onpress={handleforgotpassword} type="primary"/> */}
-     <Btn btntext="Have an account? Login" onpress={handlehaveaccount} type="ter"/>
-   </View>
-    </ScrollView>
-  )
+                <Text style={styles.pp}>By Registering, you confirm that you accept our <Text style={{ color: 'red' }}>Terms of Use</Text> and <Text style={{ color: 'red' }}>Privacy Policy</Text></Text>
+                <Btn btntext="Create" onpress={handleregister} type="primary" />
+
+                <Btn btntext="Have an account? Login" onpress={handlehaveaccount} type="ter" />
+            </View>
+        </ScrollView>
+    )
 }
-const styles=StyleSheet.create({
-    root:{
-        alignItems:'center',
-        padding:30
+const styles = StyleSheet.create({
+    root: {
+        alignItems: 'center',
+        padding: 30
     },
-    pp:{
-    
-        margin:12,
-        fontSize:14
+    pp: {
+
+        margin: 12,
+        fontSize: 14
     },
-    a:{
-        width:'70%',
-        maxHeight:200,
-        maxWidth:300
+    a: {
+        width: '70%',
+        maxHeight: 200,
+        maxWidth: 300
     },
-    title:{
-        fontSize:24,
-        
-        margin:10,
-        color:'#051C60'
+    title: {
+        fontSize: 24,
+
+        margin: 10,
+        color: '#051C60'
     }
 })
 export default Register
