@@ -28,7 +28,7 @@ const AuthStack = (props) => {
     <Stack.Navigator screenOptions={{headerShown:false}}>
         
         <Stack.Screen name='LoginScreen'>
-            {()=><Login isloggedin={props.isloggedin} setisloggedin={props.setisloggedin}/>}
+            {()=><Login {...props} isloggedin={props.isloggedin} setisloggedin={props.setisloggedin}/>}
         </Stack.Screen>
         <Stack.Screen name='RegisterScreen'>
             {()=><RegisterStack/>}

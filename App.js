@@ -49,8 +49,8 @@ const App = () => {
         <NavigationContainer>
             {
                 isloggedin?
-                  <Drawerbox isloggedin={isloggedin} setisloggedin={setisloggedin}/> 
-                :<AuthStack isloggedin={isloggedin} setisloggedin={setisloggedin}/>
+                  <Drawerbox custid={custid} setcustid={setcustid} isloggedin={isloggedin} setisloggedin={setisloggedin}/> 
+                :<AuthStack custid={custid} setcustid={setcustid} isloggedin={isloggedin} setisloggedin={setisloggedin}/>
              
             }
           

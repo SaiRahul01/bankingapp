@@ -11,9 +11,18 @@ const Login = (props) => {
     const navigationtool=useNavigation();
 
     const {height}=useWindowDimensions()
+    const [password, setpassword] = useState('')
 
     const handlelogin=()=>{
-    
+        if(props.custid===''){
+            Alert.alert("Invalid Credentials!","Please Enter valid Customer ID");
+            return;
+        }
+        if(password!=='123456'){
+            Alert.alert("Invalid Credentials!","Please Check the Customer Id and Password ");
+            return;
+        }
+        
        
    
         ToastAndroid.show("Logged in",1000);
@@ -22,20 +31,7 @@ const Login = (props) => {
        }, 500);
 
     }
-    const loginuser=async(a,b)=>{
-        // try{
-        //     let resp=await auth().signInWithEmailAndPassword(a,b);
-        //     if(resp && resp.user){
-        //         console.log("Logged in successfully");
-        //         ToastAndroid.show("Logged in",1000);
-        //         navigationtool.navigate("HomeScreen")
-        //     }
-        // }
-        // catch(e){
-        //     console.log(e);
-        //     ToastAndroid.show("Invalid Credentials",2000);
-        // }
-    }
+   
 
     const handleforgotpassword=()=>{
 
@@ -53,7 +49,9 @@ const Login = (props) => {
      <Image source={Loginlogo} style={[styles.a,{height:height*0.3,marginBottom:40}]} resizeMode="contain"/>
     
      <CustomInput placeholder="Customer ID" value={props.custid} setValue={props.setcustid} ste={false}/>
-     <CustomInput placeholder="Mobile Number" value={props.usermobilenumber} setValue={props.setusermobilenumber} type='numeric' ste={true}/>
+     <CustomInput placeholder="Password" value={password} setValue={setpassword} type='numeric' ste={true}/>
+    
+    
      <Btn btntext="Login" onpress={handlelogin} type="primary"/>
      <Btn btntext="Forgot Password" onpress={handleforgotpassword} type="ter"/>
 

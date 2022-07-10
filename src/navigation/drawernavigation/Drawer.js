@@ -15,11 +15,13 @@ import DrawerContent from './DrawerContent.js';
 // drawerContent={props=><CustomDrawer {...props} />}
 const Drawer = (props) => {
   const handleLogout=()=>{
-       
+   
     setTimeout(() => {
       props.setisloggedin(false)
+      props.setcustid('');
     }, 500);
     ToastAndroid.show("Logged out!",1000);
+ 
 
 
 }
@@ -29,20 +31,24 @@ const Drawer = (props) => {
     <Drawerr.Navigator drawerContent={(props)=><DrawerContent {...props}/>}
      screenOptions={{ drawerLabelStyle: {}, drawerActiveBackgroundColor: 'black', drawerActiveTintColor: 'white',headerTintColor:'black',headerTitleAlign:'center',headerShown:true,headerTitleStyle:{fontFamily:'',fontSize:24},headerRight:()=>(<Pressable onPress={handleLogout}><MI name='logout' size={30} style={{marginRight:10}}/></Pressable>) }}>
 
-      <Drawerr.Screen name='My Account' component={A} />
+      <Drawerr.Screen name='My Account' >
+        {()=><A {...props}/>}
+      </Drawerr.Screen>
 
-      <Drawerr.Screen name='Bank Transfers' component={B}  />
+      <Drawerr.Screen name='Bank Transfers'   >
+        {()=><B {...props}/>}
+      </Drawerr.Screen>
 
       <Drawerr.Screen name='Profile' >
-        {() => <C isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} />}
+        {() => <C isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} {...props} />}
       </Drawerr.Screen>
 
       <Drawerr.Screen name='E-Deposits' >
-        {() => <D  />}
+        {() => <D {...props} />}
       </Drawerr.Screen>
       
       <Drawerr.Screen name='Settings'>
-        {() => <E isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} />}
+        {() => <E {...props} isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} />}
       </Drawerr.Screen>
       
 
