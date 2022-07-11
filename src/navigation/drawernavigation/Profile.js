@@ -72,74 +72,74 @@ const Logout = (props) => {
       <Image source={profileicon} style={{height:120,width:120,marginLeft:'auto',marginRight:'auto',marginTop:30}} resizeMode="contain"/>
       {/* <Text style={{textAlign:'center',marginTop:50,fontSize:30,fontFamily:'Slabo27px-Regular'}}>My Profile</Text> */}
       
-      <View style={{borderWidth:1,height:50,flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto'}}>
+      <View style={{ elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
-        <Text style={{fontSize:20,color:'#4C76E2'}}>Name</Text>
+        <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'20%'}}>Name</Text>
         </View>
         <View>
-        <Text style={{fontSize:20,color:'black'}}>{userdetails.Name}</Text>
+        <Text style={{fontSize:18,color:'black',marginLeft:'25%'}}>{userdetails.Name}</Text>
         </View>
       </View>
 
-      <View style={{borderWidth:1,height:50,flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto'}}>
+      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
-        <Text style={{fontSize:18,color:'#4C76E2'}}>Membership No</Text>
+        <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'13%'}}>Membership No</Text>
         </View>
         <View>
-        <Text style={{fontSize:20,color:'black'}}>{userdetails.MEMBERSHIP_NO}</Text>
+        <Text style={{fontSize:18,color:'black',marginLeft:'10%'}}>{userdetails.MEMBERSHIP_NO}</Text>
         </View>
       </View>
 
-      <View style={{borderWidth:1,height:50,flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto'}}>
+      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
-        <Text style={{fontSize:20,color:'#4C76E2'}}>Mobile</Text>
+        <Text style={{fontSize:20,color:'#4C76E2',marginLeft:'20%'}}>Mobile</Text>
         </View>
         <View>
-        <Text style={{fontSize:17,color:'black'}}>+91 {userdetails.PhoneNo}</Text>
+        <Text style={{fontSize:17,color:'black',marginLeft:'20%'}}>+91 {userdetails.PhoneNo}</Text>
         </View>
       </View>
-      <View style={{borderWidth:1,height:50,flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto'}}>
+      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
-        <Text style={{fontSize:20,color:'#4C76E2'}}>Email</Text>
+        <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'22%'}}>Email</Text>
         </View>
         <View>
-        <Text style={{fontSize:20,color:'black'}}>{userdetails.EMail?userdetails.EMail:'NULL'}</Text>
-        </View>
-      </View>
-
-      <View style={{borderWidth:1,height:50,flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto'}}>
-        <View >
-        <Text style={{fontSize:20,color:'#4C76E2'}}>PanCard</Text>
-        </View>
-        <View>
-        <Text style={{fontSize:20,color:'black'}}>{userdetails.Pancard?userdetails.Pancard:"NULL"}</Text>
+        <Text style={{fontSize:18,color:'black',marginLeft:'40%'}}>{userdetails.EMail?userdetails.EMail:'NULL'}</Text>
         </View>
       </View>
 
-      <View style={{borderWidth:1,height:150,flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto'}}>
+      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
-        <Text style={{fontSize:20,color:'#4C76E2'}}>Address</Text>
+        <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'20%'}}>PanCard</Text>
         </View>
-        <View style={{width:'35%'}}>
-        <Text style={{fontSize:15,color:'black'}}>{userdetails.Address}</Text>
+        <View>
+        <Text style={{fontSize:18,color:'black',marginLeft:'33%'}}>{userdetails.Pancard?userdetails.Pancard:"NULL"}</Text>
         </View>
       </View>
 
-      <View style={{borderWidth:1,height:50,flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto'}}>
+      <View style={{elevation:2,borderWidth:1,height:'auto',flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
-        <Text style={{fontSize:20,color:'#4C76E2'}}>Nominee</Text>
+        <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'20%'}}>Address</Text>
         </View>
-        <View>
-        <Text style={{fontSize:15,color:'black'}}>{userdetails.NOMINEE}</Text>
+        <View style={{width:'58%'}}>
+        <Text style={{ padding:10,fontSize:15,color:'black',marginLeft:'15%',flexWrap:'wrap',flex:1,marginTop:'auto',height:'auto',paddingTop:'auto',marginTop:'10%',marginBottom:'10%'}}>{userdetails.Address}</Text>
         </View>
       </View>
 
-      <View style={{borderWidth:1,height:50,flexDirection:'row',justifyContent:'space-around',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto'}}>
+      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
-        <Text style={{fontSize:20,color:'#4C76E2'}}>Created</Text>
+        <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'20%'}}>Nominee</Text>
         </View>
         <View>
-        <Text style={{fontSize:15,color:'black'}}>{userdetails.dtCreatedDate}</Text>
+        <Text style={{fontSize:18,color:'black',marginLeft:'20%'}}>{userdetails.NOMINEE}</Text>
+        </View>
+      </View>
+
+      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
+        <View >
+        <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'20%'}}>Created</Text>
+        </View>
+        <View>
+        <Text style={{fontSize:18,color:'black'}}>{userdetails.dtCreatedDate}</Text>
         </View>
       </View>
     
@@ -151,7 +151,7 @@ const Logout = (props) => {
 }
 const styles=StyleSheet.create({
     root:{
-
+  
     },
     title:{
 

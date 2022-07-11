@@ -80,32 +80,32 @@ const A = (props) => {
 {/* <Image source={Monkey} style={styles.monkeyimg} resizeMode="contain"/> */}
 {
   accountdetails.map((item) => (
-    <View key={item.id} style={styles.card}>
+    <View key={item.id} style={styles.card} >
       <View style={styles.row}>
         <View>
-          <Text style={{color:'#0384fc',marginLeft:'20%',fontSize:20}}>Module</Text>
+          <Text style={{color:'#0384fc',marginLeft:'20%',fontSize:18}}>Module</Text>
         </View>
         <View>
-          <Text  style={{color:'black',marginLeft:30,fontSize:20}}>{item.Module}</Text>
+          <Text  style={{color:'black',marginLeft:30,fontSize:18}}>{item.Module}</Text>
         </View>
 
       </View>
       <View style={styles.row}>
 
         <View>
-          <Text  style={{color:'#0384fc',marginLeft:'20%',fontSize:20}} >Account</Text>
+          <Text  style={{color:'#0384fc',marginLeft:'20%',fontSize:18}} >Account</Text>
         </View>
         <View>
-          <Text style={{color:'black',marginLeft:30,fontSize:20}}>{item.account}</Text>
+          <Text style={{color:'black',marginLeft:30,fontSize:18}}>{item.account}</Text>
         </View>
 
       </View>
       <View style={styles.row}>
         <View>
-          <Text  style={{color:'#0384fc',marginLeft:'20%',fontSize:20}}>Balance</Text>
+          <Text  style={{color:'#0384fc',marginLeft:'20%',fontSize:18}}>Balance</Text>
         </View>
         <View>
-          <Text style={{color:'black',marginLeft:30,fontSize:20}}>${item.Balance}</Text>
+          <Text style={{color:'black',marginLeft:30,fontSize:18}}>${item.Balance}</Text>
         </View>
 
       </View>
@@ -134,7 +134,7 @@ const A = (props) => {
 }
 const styles = StyleSheet.create({
   root: {
-
+    marginTop:30
   },
   title: {
     marginLeft: 'auto',
@@ -163,15 +163,19 @@ const styles = StyleSheet.create({
   text: { margin: 6 },
   card: {
     borderWidth: 1,
-    width: '75%',
+    width: '80%',
     marginLeft: 'auto',
     marginRight: 'auto',
-    height: 200,
-    marginBottom: 40,
+    height: 150,
+    marginBottom: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius:10,
-    marginTop:50
+    borderRadius:5,
+    marginTop:20,
+    backgroundColor:'white',
+    borderColor:'#e8e8e8',
+    elevation:5
+    
 
 
 
@@ -181,11 +185,12 @@ const styles = StyleSheet.create({
     height: '20%',
     marginBottom: 10,
     marginTop: 10,
-    width: '90%',
+    width: '100%',
     marginLeft: 'auto',
     marginRight: 'auto',
     flex: 1,
     flexDirection: 'row',
+  
   
 
   }
