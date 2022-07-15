@@ -5,9 +5,10 @@ import { createDrawerNavigator, DrawerItem, DrawerItemList } from '@react-naviga
 import A from './Home'
 import B from './BankTransfers'
 import C from './Profile'
-import D from './Edeposits'
+import D from './BeneficiaryStack/BenStack'
 import E from './Settings'
 import G from './BankStatement'
+import H from './CustomerAccList'
 import II from 'react-native-vector-icons/Ionicons'
 import MCI from 'react-native-vector-icons/MaterialCommunityIcons'
 import MI from 'react-native-vector-icons/MaterialIcons'
@@ -44,7 +45,7 @@ const Drawer = (props) => {
         {() => <C isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} {...props} />}
       </Drawerr.Screen>
 
-      <Drawerr.Screen name='E-Deposits' >
+      <Drawerr.Screen name='Beneficiaries' >
         {() => <D {...props} />}
       </Drawerr.Screen>
 
@@ -54,6 +55,10 @@ const Drawer = (props) => {
       
       <Drawerr.Screen name='Settings'>
         {() => <E {...props} isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} />}
+      </Drawerr.Screen>
+
+      <Drawerr.Screen name='Accounts List'>
+        {() => <H {...props} isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} />}
       </Drawerr.Screen>
       
 

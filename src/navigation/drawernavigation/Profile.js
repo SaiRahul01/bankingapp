@@ -32,8 +32,9 @@ const Logout = (props) => {
     })
         .then((response) => response.json())
         .then((data) => {
-          
-            setuserdetails(data[0])
+          console.log("DATA BELOW\n");
+          console.log(data);
+            setuserdetails(data.payload[0])
             console.log(userdetails);
             
            
@@ -67,21 +68,25 @@ const Logout = (props) => {
     }
   return (
     <ScrollView>
-      <View style={[styles.root,{marginBottom:100}]}>
+      {
+          JSON.stringify(userdetails) === {}?<Text style={{flex:1}}>Something went wrong</Text>:
+          <View>
+            
+            <View style={[styles.root,{marginBottom:100}]}>
       
       <Image source={profileicon} style={{height:120,width:120,marginLeft:'auto',marginRight:'auto',marginTop:30}} resizeMode="contain"/>
       {/* <Text style={{textAlign:'center',marginTop:50,fontSize:30,fontFamily:'Slabo27px-Regular'}}>My Profile</Text> */}
       
-      <View style={{ elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
+      <View style={{ elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'90%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
         <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'20%'}}>Name</Text>
         </View>
         <View>
-        <Text style={{fontSize:18,color:'black',marginLeft:'25%'}}>{userdetails.Name}</Text>
+        <Text style={{fontSize:17,color:'black',marginLeft:'0%'}}>{userdetails.Name}</Text>
         </View>
       </View>
 
-      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
+      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'90%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
         <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'13%'}}>Membership No</Text>
         </View>
@@ -90,7 +95,7 @@ const Logout = (props) => {
         </View>
       </View>
 
-      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
+      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'90%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
         <Text style={{fontSize:20,color:'#4C76E2',marginLeft:'20%'}}>Mobile</Text>
         </View>
@@ -98,7 +103,7 @@ const Logout = (props) => {
         <Text style={{fontSize:17,color:'black',marginLeft:'20%'}}>+91 {userdetails.PhoneNo}</Text>
         </View>
       </View>
-      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
+      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'90%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
         <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'22%'}}>Email</Text>
         </View>
@@ -107,7 +112,7 @@ const Logout = (props) => {
         </View>
       </View>
 
-      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
+      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'90%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
         <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'20%'}}>PanCard</Text>
         </View>
@@ -116,7 +121,7 @@ const Logout = (props) => {
         </View>
       </View>
 
-      <View style={{elevation:2,borderWidth:1,height:'auto',flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
+      <View style={{elevation:2,borderWidth:1,height:'auto',flexDirection:'row',alignItems:'center',width:'90%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
         <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'20%'}}>Address</Text>
         </View>
@@ -125,16 +130,16 @@ const Logout = (props) => {
         </View>
       </View>
 
-      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
+      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'90%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
         <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'20%'}}>Nominee</Text>
         </View>
         <View>
-        <Text style={{fontSize:18,color:'black',marginLeft:'20%'}}>{userdetails.NOMINEE}</Text>
+        <Text style={{fontSize:17,color:'black',marginLeft:'5%'}}>{userdetails.NOMINEE}</Text>
         </View>
       </View>
 
-      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'80%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
+      <View style={{elevation:2,borderWidth:1,height:50,flexDirection:'row',alignItems:'center',width:'90%',marginTop:20,marginLeft:'auto',marginRight:'auto',backgroundColor:'white',borderColor:'#e8e8e8'}}>
         <View >
         <Text style={{fontSize:18,color:'#4C76E2',marginLeft:'20%'}}>Created</Text>
         </View>
@@ -146,6 +151,9 @@ const Logout = (props) => {
      
       
     </View>
+          </View>
+      }
+      
     </ScrollView>
   )
 }

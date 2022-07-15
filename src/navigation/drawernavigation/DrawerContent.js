@@ -34,13 +34,16 @@ const DrawerContent = (props) => {
             {/* // Main bg section ends */}
             <View style={[styles.row,styles.userinfo]}>
                <Drawer.Section >
-                <DrawerItem label="My Account" icon={()=><MI name='account-balance' size={25} style={{marginRight:-10}}/>} style={{marginTop:40}} onPress={()=>props.navigation.navigate("My Account")}/>
+                <DrawerItem label="Account Details" icon={()=><MI name='account-balance' size={25} style={{marginRight:-10}}/>} style={{marginTop:40}} onPress={()=>props.navigation.navigate("My Account")}/>
 
-                <DrawerItem label="E Deposits" icon={()=><FA name='rupee' size={25} style={{marginLeft:5}} />} style={{}} onPress={()=>props.navigation.navigate("E-Deposits")}/>
+                <DrawerItem label="My Accounts" icon={()=><MI name='account-balance' size={25} style={{marginRight:-10}}/>}  onPress={()=>props.navigation.navigate("Accounts List")}/>
+
+
+                <DrawerItem label="Beneficiaries" icon={()=><FA name='rupee' size={25} style={{marginLeft:5}} />} style={{}} onPress={()=>props.navigation.navigate("Beneficiaries")}/>
 
                 <DrawerItem label="Bank Statement" icon={()=><ET name='newsletter' size={25} style={{marginLeft:2,marginRight:-8}}/>} style={{}} onPress={()=>props.navigation.navigate("Bank Statement")}/>
 
-                <DrawerItem label="Bank Transfers" icon={()=><MCI name='bank-transfer' size={35} style={{marginRight:-18}}/>} style={{}} onPress={()=>props.navigation.navigate("Bank Transfers")}/>
+                {/* <DrawerItem label="Bank Transfers" icon={()=><MCI name='bank-transfer' size={35} style={{marginRight:-18}}/>} style={{}} onPress={()=>props.navigation.navigate("Bank Transfers")}/> */}
 
                 <DrawerItem label="Profile" icon={()=><MCI name='account-circle' size={25} style={{marginLeft:2,marginRight:-8}}/>} style={{}} onPress={()=>props.navigation.navigate("Profile")}/>
 

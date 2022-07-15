@@ -12,6 +12,7 @@ const LoginInput = ({value,setValue,placeholder,ste,type}) => {
       value={value}
       onChangeText={setValue}
       secureTextEntry={ste}
+ 
       
       />
     </View>
