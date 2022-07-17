@@ -22,6 +22,6 @@
 * Bootstrap
 
 ### Contributers
-* Vishnu Gandlur 
-* Sai Rahul
-* Samarth Sharma
+* Vishnu Gandlur 2020AAPS2198H
+* Sai Rahul      2020A7PS0204H
+* Samarth Sharma 2020A3PS0615H
