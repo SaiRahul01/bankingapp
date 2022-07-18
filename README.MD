@@ -1,6 +1,6 @@
 # Banking Application
 
-## React Native Application developed as a part of Internship at Techverve Solutions Private Limited, Bangalore
+## Android Application developed as a part of Internship at Techverve Solutions Private Limited, Bangalore as a part of PS-1
 
 ## AIM
 - The Aim of the Project is to simulate the process of Banking using an API being developed by other teams in the organisation parallelly.
