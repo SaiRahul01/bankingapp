@@ -11,6 +11,7 @@ import {
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from '../../screens/signinscreens/Login';
+import  FP from '../../screens/signinscreens/ForgotPassword'
 import RegisterStack from '../../screens/Registerscreens/RegisterStack';
 
 
@@ -29,6 +30,9 @@ const AuthStack = (props) => {
         
         <Stack.Screen name='LoginScreen'>
             {()=><Login {...props} isloggedin={props.isloggedin} setisloggedin={props.setisloggedin}/>}
+        </Stack.Screen>
+        <Stack.Screen name='Forgotpassword'>
+            {()=><FP {...props} isloggedin={props.isloggedin} setisloggedin={props.setisloggedin}/>}
         </Stack.Screen>
         <Stack.Screen name='RegisterScreen'>
             {()=><RegisterStack/>}

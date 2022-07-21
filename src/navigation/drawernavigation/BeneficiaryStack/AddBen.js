@@ -1,4 +1,4 @@
-import { View, Text, ToastAndroid } from 'react-native'
+import { View, Text, ToastAndroid, Alert } from 'react-native'
 import React from 'react'
 import CustomInput from '../../../components/inputs/LoginInput'
 import { useState } from 'react'
@@ -6,9 +6,7 @@ import Btn from '../../../components/buttons/Loginbtn'
 import { ScrollView } from 'react-native-gesture-handler'
 
 const AddBen = (props) => {
-  const handleaddben=()=>{
-      ToastAndroid.show("Addded Successfully",1000);
-  }
+
   const [typee, settypee] = useState('')
   const [accno, setaccno] = useState('')
   const [benfname, setbenfname] = useState('')
@@ -19,6 +17,56 @@ const AddBen = (props) => {
   const [phoneNo, setphoneNo] = useState('')
   const [remarks, setremarks] = useState('')
 
+
+  const handleaddben=()=>{
+     
+      let a = "http://40.80.91.121:5001/api/AddBenificiary";
+      const dataa = {
+  
+        
+          "type": typee,
+          "custId": props.custid,
+          "accountNo": accno,
+          "benfName": benfname,
+          "branch": branch,
+          "bank": bank,
+          "ifscCode": ifsccode,
+          "email": email,
+          "phoneNo": phoneNo,
+          "remarks": remarks
+        
+      }
+      fetch(a, {
+        method: 'POST',
+        headers: {
+          //   'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataa),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+        
+        console.log(data);
+        if(data.result==='Error')
+        {
+          Alert.alert("Failed to Add !", "Please check the details you have entered and Try again!");
+        }
+      
+  
+  
+        })
+        .catch((error) => {
+            ToastAndroid.show("An Error occured",1000);
+        });
+
+
+
+
+
+  }
+
+ 
 
 
   return (

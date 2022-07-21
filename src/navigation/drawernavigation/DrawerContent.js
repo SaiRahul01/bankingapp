@@ -34,9 +34,11 @@ const DrawerContent = (props) => {
             {/* // Main bg section ends */}
             <View style={[styles.row,styles.userinfo]}>
                <Drawer.Section >
-                <DrawerItem label="Account Details" icon={()=><MI name='account-balance' size={25} style={{marginRight:-10}}/>} style={{marginTop:40}} onPress={()=>props.navigation.navigate("My Account")}/>
+                <DrawerItem label="Account Details" icon={()=><MI name='account-balance' size={25} style={{marginRight:-10}}/>} style={{marginTop:40}} onPress={()=>props.navigation.navigate("Account Details")}/>
 
-                <DrawerItem label="My Accounts" icon={()=><MI name='account-balance' size={25} style={{marginRight:-10}}/>}  onPress={()=>props.navigation.navigate("Accounts List")}/>
+                {/* <DrawerItem label="My Accounts" icon={()=><MI name='account-balance' size={25} style={{marginRight:-10}}/>}  onPress={()=>props.navigation.navigate("Accounts List")}/> */}
+
+                <DrawerItem label="Module Wise Accounts" icon={()=><MI name='account-balance' size={25} style={{marginRight:-10}}/>}  onPress={()=>props.navigation.navigate("Module Wise Accounts")}/>
 
 
                 <DrawerItem label="Beneficiaries" icon={()=><FA name='rupee' size={25} style={{marginLeft:5}} />} style={{}} onPress={()=>props.navigation.navigate("Beneficiaries")}/>

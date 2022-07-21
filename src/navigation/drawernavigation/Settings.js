@@ -26,14 +26,24 @@ const Settings = (props) => {
     })
         .then((response) => response.json())
         .then((data) => {
-          console.log("DATA BELOW\n");
-          console.log(oldpassword+" "+newpassword);
+          console.log(dd);
+          // console.log("DATA BELOW\n");
+          // console.log(oldpassword+" "+newpassword);
           console.log(data);
-          if(data==0)
+          if(data.message==='Password Reset Successfully')
           {
-            ToastAndroid.show("API is not Yet ready!!",1000);
-            return;
+              ToastAndroid.show("Password Changed Successfully !",2000)
           }
+          else{
+            ToastAndroid.show("Something Went Wrong, Try again",1000)
+            setnewpassword('')
+            setoldpassword('')
+          }
+          // if(data==0)
+          // {
+          //   ToastAndroid.show("API is not Yet ready!!",1000);
+          //   return;
+          // }
            
             
            
@@ -54,6 +64,7 @@ const Settings = (props) => {
         setTimeout(() => {
           props.setisloggedin(false)
         }, 500);
+        props.setcustid('')
         ToastAndroid.show("Logged out!",1000);
     
 

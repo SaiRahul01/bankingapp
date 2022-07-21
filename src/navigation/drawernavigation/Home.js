@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Image, Pressable,RefreshControl } from 'react-native'
 import React, { useEffect } from 'react'
-import Monkey from '../../../assets/images/monkey.png'
+
 import auth, { firebase } from '@react-native-firebase/auth'
 import Btn from '../../components/buttons/Loginbtn'
 import { useNavigation } from '@react-navigation/native'
@@ -80,7 +80,7 @@ const A = (props) => {
 {/* <Image source={Monkey} style={styles.monkeyimg} resizeMode="contain"/> */}
 {
   accountdetails.map((item) => (
-    <View key={item.id} style={styles.card} >
+    <View key={item.account} style={styles.card} >
       <View style={styles.row}>
         <View>
           <Text style={{color:'#0384fc',marginLeft:'20%',fontSize:18}}>Module</Text>

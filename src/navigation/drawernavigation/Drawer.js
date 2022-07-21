@@ -9,6 +9,7 @@ import D from './BeneficiaryStack/BenStack'
 import E from './Settings'
 import G from './BankStatement'
 import H from './CustomerAccList'
+import I from './Modulewisecustacc'
 import II from 'react-native-vector-icons/Ionicons'
 import MCI from 'react-native-vector-icons/MaterialCommunityIcons'
 import MI from 'react-native-vector-icons/MaterialIcons'
@@ -33,8 +34,12 @@ const Drawer = (props) => {
     <Drawerr.Navigator drawerContent={(props)=><DrawerContent {...props}/>}
      screenOptions={{ drawerLabelStyle: {}, drawerActiveBackgroundColor: 'black', drawerActiveTintColor: 'white',headerTintColor:'black',headerTitleAlign:'center',headerShown:true,headerTitleStyle:{fontFamily:'',fontSize:24},headerRight:()=>(<Pressable onPress={handleLogout}><MI name='logout' size={30} style={{marginRight:10,color:'red'}}/></Pressable>) }}>
 
-      <Drawerr.Screen name='My Account' >
+      <Drawerr.Screen name='Account Details' >
         {()=><A {...props}/>}
+      </Drawerr.Screen>
+
+      <Drawerr.Screen name='Module Wise Accounts' >
+        {()=><I {...props}/>}
       </Drawerr.Screen>
 
       <Drawerr.Screen name='Bank Transfers'   >
@@ -60,6 +65,10 @@ const Drawer = (props) => {
       <Drawerr.Screen name='Accounts List'>
         {() => <H {...props} isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} />}
       </Drawerr.Screen>
+
+      {/* <Drawerr.Screen name='Bank Transfers'>
+        {() => <I {...props} isloggedin={props.isloggedin} setisloggedin={props.setisloggedin} />}
+      </Drawerr.Screen> */}
       
 
     </Drawerr.Navigator>

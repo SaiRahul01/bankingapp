@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet,useWindowDimensions ,ScrollView} from 'react-native'
+import { View, Text, Image, StyleSheet,useWindowDimensions ,ScrollView, Alert} from 'react-native'
 import React from 'react'
 import Loginlogo from '../../../assets/images/login-img.png'
 import CustomInput from '../../components/inputs/LoginInput'
@@ -11,9 +11,47 @@ const ForgotPassword = () => {
     const {height}=useWindowDimensions()
     
     const [username, setusername] = useState('')
+    const [dob, setdob] = useState('')
+    const [phoneNo, setphoneNo] = useState('')
 
     const handleonsend=()=>{
-        navigationtool.navigate("NewPassword")
+        
+      let a = "http://40.80.91.121:5001/api/ForgotPassword";
+      const dataa = {
+  
+        
+          "phoneNo":phoneNo,
+          "dob":dob
+        
+      }
+      fetch(a, {
+        method: 'POST',
+        headers: {
+          //   'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataa),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+        
+        console.log(data);
+       if(data.result==='Error')
+       {
+            Alert.alert("Failed!","Either your Mobile Number or the Date of Birth is Wrong ");
+            return;
+       }
+  
+  
+        })
+        .catch((error) => {
+            ToastAndroid.show("An Error occured",1000);
+        });
+
+
+
+
+      
     }
     const handlebacktologin=()=>{
         navigationtool.navigate("LoginScreen")
@@ -24,16 +62,13 @@ const ForgotPassword = () => {
         <View style={styles.root}>
         <Text style={styles.title}>Reset my Password</Text>
    
-     <CustomInput placeholder="User Name" value={username} setValue={setusername} ste={false}/>
+     <CustomInput placeholder="Date of Birth in DD-MM-YYYY Format" value={dob} setValue={setdob} ste={false}/>
+     <CustomInput placeholder="Phone Number" value={phoneNo} setValue={setphoneNo} ste={false}/>
      {/* <CustomInput placeholder="Email" value={useremail} setValue={setuseremail} ste={false}/> */}
 
     
-     <Btn btntext="Send" onpress={handleonsend} type="primary"/>
-     {/* <Btn btntext="Forgot Password" onpress={handleforgotpassword} type="ter"/> */}
-
-     {/* <Btn btntext="Login  with Google" onpress={handlegooglelogin} type="second"/> */}
-     {/* <Btn btntext="Login with FaceBook" onpress={handleforgotpassword} type="primary"/> */}
-     {/* <Btn btntext="Resend Code" onpress={handleresendcode} type="second"/> */}
+     <Btn btntext="Reset" onpress={handleonsend} type="primary"/>
+    
      <Btn btntext="Back to Login?" onpress={handlebacktologin} type="ter"/>
    </View>
     </ScrollView>

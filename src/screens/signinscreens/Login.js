@@ -40,7 +40,7 @@ const Login = (props) => {
                 }
                 else{
                     console.log(data);
-                    Alert.alert("Login Failed!","Please check the credentials");
+                    Alert.alert("Login Failed!","credentials are wrong or You have not yet Registered!");
                 }
                 
                
@@ -58,7 +58,7 @@ const Login = (props) => {
 
     const handleforgotpassword=()=>{
 
-        navigationtool.navigate("ForgotPassword")
+        navigationtool.navigate("Forgotpassword")
     }
     
     const handledonthaveanaccount=()=>{
